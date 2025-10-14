@@ -977,7 +977,47 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about {
-  padding-top: 100px;
+  position: relative;
+  padding: 100px 0;         /* space for content */
+  min-height: 100vh;        /* make it at least full screen height */
+  background-color: #000;   /* fallback color if image doesn’t load */
+  overflow: hidden;
+}
+.bg-holder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.about .container {
+  position: relative;
+  z-index: 3; /* Keep content above all backgrounds */
+}
+.about-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes the image fill like a CSS background */
+  z-index: 0;          /* behind everything */
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* transparent overlay */
+  z-index: 1; /* sits above the image but under the content */
+}
+
+#about .container {
+  position: relative;
+  z-index: 2; /* bring content above overlay */
 }
 
 .about .content h3 {
@@ -993,6 +1033,13 @@ section,
 
 .about .content h2 {
   font-weight: 700;
+  font-size: 40px;
+  color: white;
+}
+.about .content h2 b {
+  font-weight: 700;
+  font-size: 60px;
+  color: #3D74B6;
 }
 
 .about .content p:last-child {
