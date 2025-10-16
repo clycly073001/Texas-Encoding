@@ -477,14 +477,35 @@
         </div>
 
         <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4 style="margin-left: 30px;">INFO</h4>
-          <ul>
-            <li><a href="#">DTI</a></li>
-            <li><a href="#">BMBE</a></li>
-            <li><a href="#">LLC Certificate</a></li>
-            <li><a href="#">Software Development Policy</a></li>
-          </ul>
-        </div>
+            <h4 style="margin-left: 30px;">INFO</h4>
+            <ul>
+              <li><a href="#">LLC Certificate</a></li>
+              <!-- Trigger for modal -->
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#pdfModal">
+                  Software Development Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <<!-- Modal for PDF -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">Software Development Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0 d-flex justify-content-center">
+        <!-- Auto-fit PDF -->
+        <embed src="assets/doc/Software Development Policy (2).pdf#zoom=75"
+               type="application/pdf"
+             style="width:800px; height:850px;" />
+      </div>
+              </div>
+            </div>
+          </div>
 
       </div>
     </div>
